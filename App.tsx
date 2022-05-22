@@ -1,20 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { NativeBaseProvider } from "native-base";
+import React from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
+import Actual from "./src/Actual";
+import Controls from "./src/Controls";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NativeBaseProvider>
+      <SafeAreaView style={styles.container}>
+        <StatusBar style="light" />
+        <Actual />
+        <Controls />
+      </SafeAreaView>
+    </NativeBaseProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // flex: 1,
+    backgroundColor: "#081c15",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
